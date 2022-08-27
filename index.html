@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>四目並べ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="display">
+        <div id="title">四目並べ</div>
+        <div id="message"></div>
+      </div>
+      <div id="board"></div>
+      <div id="btn-wrapper">
+        <div id="start-celling" class="btn">天井</div>
+        <div id="start-floor" class="btn start-position">床</div>
+        <div id="start" class="btn">スタート</div>
+        <div id="reset" class="btn">リセット</div>
+        <div id="show-rule" class="btn">ルール</div>
+      </div>
+  
+      <div id="rule">
+        <button id="close-rule">&times;</button>
+        <h3>ゲーム説明</h3>
+        <p>
+          上もしくは下のマスからコマを順に積み重ねていき，縦か横か斜めに，先に４つコマを並べた方の勝ちです。<br />
+          最初に上下どちらからスタートするかを選んでから、スタートボタンを押してください。
+        </p>
+      </div>
+      <div id="overlay-blur" class="hidden"></div>
+    </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

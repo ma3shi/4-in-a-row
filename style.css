@@ -1,0 +1,200 @@
+＊ {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #d5ffdc;
+  font-weight: bold;
+}
+
+#container {
+  max-width: 800px;
+  width: 80vw;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+/* タイトル・メッセージ*/
+#display {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  color: blue;
+  font-size: 2rem;
+}
+
+/* タイトル */
+#title {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+/* メッセージ */
+#message {
+  width: 65%;
+  height: 100%;
+  text-align: center;
+}
+/* ボード */
+#board {
+  width: 80%;
+  height: 70%;
+  background-color: #fff;
+  border: 5px solid navy;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+/* パネル */
+.panel {
+  border: 1px solid navy;
+}
+
+/* プレイヤー1 床 */
+.player-one {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(img/chair_wood.png);
+}
+
+/* プレイヤー2 床 */
+.player-two {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(img/pipe_isu.png);
+}
+
+/* プレイヤー1 天井 */
+.player-one-cell {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(img/red_balloon.png);
+}
+
+/* プレイヤー2 天井 */
+.player-two-cell {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(img/blue_balloon.png);
+}
+
+/* ボタンとりまとめ */
+#btn-wrapper {
+  width: 100%;
+  height: 7%;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* ボタン */
+.btn {
+  width: 18%;
+  height: 100%;
+  border-radius: 100px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #3498db;
+  cursor: pointer;
+  user-select: none;
+  border: 1px white solid;
+  letter-spacing: 8px;
+  padding: 5px;
+}
+
+/* ボタンをホバー */
+.btn:not(.inactive):hover {
+  color: #3498db;
+  background: white;
+}
+
+/* ボタンを押す */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* 使用不可時 */
+.inactive {
+  cursor: not-allowed;
+}
+
+/* スタートポジション */
+.start-position {
+  color: red;
+}
+
+/* ゲームルール */
+#rule {
+  /* 上下左右中央に寄せる */
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -300%);
+  width: 40%;
+  color: black;
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 48px 80px rgba(0, 0, 0, 0.3);
+  /* overlayより上に重ねる */
+  z-index: 10;
+  transition: all 1s ease-in-out;
+}
+
+#rule p {
+  line-height: 1.7;
+}
+
+/* ルールをだす */
+#rule.show {
+  transform: translate(-50%, 0);
+}
+
+/* ぼかしを隠す */
+.hidden {
+  display: none;
+}
+
+/* ぼかしをかぶせる */
+#overlay-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* ぼかしを入れる  px単位でぼやけ具合を指定*/
+  backdrop-filter: blur(3px);
+  /* modalの下に置く */
+  z-index: 5;
+}
+
+/* ルールを閉じるボタン */
+#close-rule {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 60px;
+  color: black;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
